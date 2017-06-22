@@ -1,7 +1,7 @@
 package com.app.master.controlinventario.Modelo;
 
 /**
- * Created by Rafael p on 21/6/2017.
+ * Created by Rafael p on 21/6/2017.a
  */
 
 public class Proveedor {
