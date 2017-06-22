@@ -8,9 +8,5 @@
 /captures
 .externalNativeBuild
 libs/
-src/main/java/com/app/master/controlinventario/Presentador/
-src/main/java/com/app/master/controlinventario/Vista/
-app/src/main/java/com/app/master/controlinventario/Presentador/
-app/src/main/java/com/app/master/controlinventario/Vista/
-/app/src/main/java/com/app/master/controlinventario/Presentador/ValidadorEntrada.java
+
 
