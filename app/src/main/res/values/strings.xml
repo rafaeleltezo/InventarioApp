@@ -3,6 +3,10 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
+    <string name="nombre_proveedor">Nombre</string>
+    <string name="nit_proveedor">NIT</string>
+    <string name="direccion_proveedor">Dirección</string>
+    <string name="telefono_proveedor">Numero teléfono</string>
+    <string name="enviar">Aceptar</string>
 </resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.master.controlinventario.Vista.Proveedores"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nombre_proveedor"
+        android:hint="@string/nombre_proveedor"/>
+
+    <EditText
+        android:id="@+id/nit_proveedor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nit_proveedor"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/direccion_proveedor"
+        android:hint="@string/direccion_proveedor"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/telefono_proveedor"
+        android:hint="@string/telefono_proveedor"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enviar"
+        android:id="@+id/enviar"/>
+
+    </LinearLayout>
+
+
