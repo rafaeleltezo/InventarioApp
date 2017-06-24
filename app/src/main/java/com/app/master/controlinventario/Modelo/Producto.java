@@ -5,10 +5,10 @@ package com.app.master.controlinventario.Modelo;
  */
 
 public class Producto {
-    String codigo,nombre,fecha,fechaVencimiento;
+    String codigo,nombre,fecha,fechaVencimiento,imagen;
     double costoCompra,valorSugerido,descuento,iva;
 
-    public Producto(String codigo, String nombre, String fecha, String fechaVencimiento, double costoCompra, double valorSugerido, double descuento, double iva) {
+    public Producto(String codigo, String nombre, String fecha, String fechaVencimiento, double costoCompra, double valorSugerido, double descuento, double iva,String imagen) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.fecha = fecha;
@@ -17,6 +17,7 @@ public class Producto {
         this.valorSugerido = valorSugerido;
         this.descuento = descuento;
         this.iva = iva;
+        this.imagen=imagen;
     }
 
     public Producto() {
@@ -84,5 +85,13 @@ public class Producto {
 
     public void setIva(double iva) {
         this.iva = iva;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 }

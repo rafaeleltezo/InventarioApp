@@ -15,6 +15,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.app.master.controlinventario.Modelo.Producto;
+import com.app.master.controlinventario.Vista.Productos;
 import com.app.master.controlinventario.Vista.Proveedores;
 
 public class MainActivity extends AppCompatActivity
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(MainActivity.this,Proveedores.class);
+                Intent i=new Intent(MainActivity.this,Productos.class);
                startActivity(i);
 
             }

@@ -39,7 +39,12 @@ public class DeserializadorDatosJson implements JsonDeserializer<RespuestaEndpoi
             String fecha=jsonObject.get("fecha").getAsString();
             String pagina=jsonObject.get("pagina").getAsString();
             String imagen=jsonObject.get("imagen").getAsString();
-            datos.add(new Datos(id,fecha,pagina,imagen));
+            Datos d=new Datos();
+            d.setId(id);
+            d.setFecha(fecha);
+            d.setFoto(imagen);
+            d.setPagina(pagina);
+            datos.add(d);
         }
         return datos;
     }

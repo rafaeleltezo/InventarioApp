@@ -8,5 +8,7 @@
     <string name="nit_proveedor">NIT</string>
     <string name="direccion_proveedor">Dirección</string>
     <string name="telefono_proveedor">Numero teléfono</string>
+    <string name="codigo">Codigo</string>
     <string name="enviar">Aceptar</string>
+
 </resources>

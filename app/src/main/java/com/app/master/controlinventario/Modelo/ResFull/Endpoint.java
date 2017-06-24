@@ -12,6 +12,6 @@ import retrofit2.http.GET;
 
 public interface Endpoint {
 
-    @GET("practica/archivo.php")
+    @GET("http://sisra.rsisco.com/practica/archivo.php")
     Call<RespuestaEndpoint> GenerarDatos();
 }
