@@ -10,4 +10,5 @@ import java.util.ArrayList;
 
 public interface iProveedores {
     public void mostrar(ArrayList<Datos> datos);
+
 }

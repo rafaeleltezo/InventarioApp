@@ -1,6 +1,7 @@
 package com.app.master.controlinventario.Modelo.ResFull;
 
 import com.app.master.controlinventario.Modelo.ResFull.Deserializador.DeserializadorDatosJson;
+import com.app.master.controlinventario.Modelo.ResFull.Deserializador.DeserializadorIngresarProovedor;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -28,4 +29,22 @@ public class RestApiAdapter {
         gsonBuilder.registerTypeAdapter(RespuestaEndpoint.class,new DeserializadorDatosJson());
         return gsonBuilder.create();
     }
+
+    //Enpoint Provvedores
+
+    public Endpoint establecerConexionIngresarProveedor(Gson gson){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://sisra.rsisco.com")
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build();
+
+        return retrofit.create(Endpoint.class);
+    }
+
+    public Gson constriurGsonDeserializadorProveedores(){
+        GsonBuilder gsonBuilder=new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(RespuestaEndpointIngresarProveedor.class,new DeserializadorIngresarProovedor());
+        return gsonBuilder.create();
+    }
+
 }

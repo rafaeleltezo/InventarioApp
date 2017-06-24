@@ -12,7 +12,9 @@ import com.app.master.controlinventario.MainActivity;
 import com.app.master.controlinventario.Modelo.Proveedor;
 import com.app.master.controlinventario.Modelo.ResFull.Datos;
 import com.app.master.controlinventario.Presentador.PresentadorMainActivity;
+import com.app.master.controlinventario.Presentador.PresentadorProveedor;
 import com.app.master.controlinventario.Presentador.iPresentadorMainActivity;
+import com.app.master.controlinventario.Presentador.iPresentadorProveedor;
 import com.app.master.controlinventario.R;
 
 import java.util.ArrayList;
@@ -21,17 +23,14 @@ public class Proveedores extends AppCompatActivity implements iProveedores {
 
     private TextView nombre,nit,direccion,telefono;
     private Button enviar;
-    iPresentadorMainActivity presentador;
+    iPresentadorProveedor presentador;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proveedores);
-
-        presentador=new PresentadorMainActivity(this,this);
-
-
+        presentador=new PresentadorProveedor(this,this);
 
         nombre=(TextView) findViewById(R.id.nombre_proveedor);
         nit=(TextView) findViewById(R.id.nit_proveedor);
@@ -43,7 +42,8 @@ public class Proveedores extends AppCompatActivity implements iProveedores {
             @Override
             public void onClick(View v) {
 
-                presentador.generandoRestFull();
+                presentador.IngresarProveedor(nit.getText().toString(),nombre.getText().toString(),
+                        direccion.getText().toString(),telefono.getText().toString());
 
             }
         });
@@ -56,4 +56,6 @@ public class Proveedores extends AppCompatActivity implements iProveedores {
             Toast.makeText(Proveedores.this, dato.getId()+"/n "+dato.getFecha()+"/n "+dato.getPagina()+"/n "+dato.getFoto()+"/n", Toast.LENGTH_SHORT).show();
         }
     }
+
+
 }
