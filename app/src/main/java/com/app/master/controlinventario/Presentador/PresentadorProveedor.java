@@ -28,18 +28,21 @@ public class PresentadorProveedor implements iPresentadorProveedor {
         this.proveedores=proveedores;
     }
 
+
     @Override
     public void IngresarProveedor(String nit,String nombre,String direccion,String telefono) {
         RestApiAdapter conexion=new RestApiAdapter();
         Gson gson=conexion.constriurGsonDeserializadorProveedores();
         Endpoint endpoint=conexion.establecerConexionIngresarProveedor(gson);
         Call<RespuestaEndpointIngresarProveedor>respuesta =endpoint.CrearProveedores(nit,nombre,direccion,telefono);
+
         respuesta.enqueue(new Callback<RespuestaEndpointIngresarProveedor>() {
             @Override
             public void onResponse(Call<RespuestaEndpointIngresarProveedor> call, Response<RespuestaEndpointIngresarProveedor> response) {
                 RespuestaEndpointIngresarProveedor respuestaProveedor=response.body();
-                codigoEstatusProvvedor=respuestaProveedor.getCodigoEstatus();
-                estadoDeingresoProveedor();
+                //Toast.makeText(context, response.code(), Toast.LENGTH_SHORT).show();
+                //codigoEstatusProvvedor=respuestaProveedor.getCodigoEstatus();
+                //estadoDeingresoProveedor();
             }
 
             @Override

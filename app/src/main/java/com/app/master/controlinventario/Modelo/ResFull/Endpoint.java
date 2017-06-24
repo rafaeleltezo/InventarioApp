@@ -17,7 +17,7 @@ public interface Endpoint {
     @GET("http://sisra.rsisco.com/practica/archivo.php")
     Call<RespuestaEndpoint> GenerarDatos();
 
-    @POST("CrearProveedores.php")
+    @POST("http://sisra.rsisco.com/controlinventario/CrearProveedores.php")
     Call<RespuestaEndpointIngresarProveedor> CrearProveedores(
             @Query("nit")String nit,@Query("nombre")String nombre,
             @Query("direccion")String direccion,@Query("telefono") String telefono);

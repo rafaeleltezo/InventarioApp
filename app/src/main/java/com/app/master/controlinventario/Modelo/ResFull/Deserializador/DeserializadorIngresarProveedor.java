@@ -14,7 +14,7 @@ import java.lang.reflect.Type;
  * Created by Rafael p on 24/6/2017.
  */
 
-public class DeserializadorIngresarProovedor implements JsonDeserializer<RespuestaEndpointIngresarProveedor> {
+public class DeserializadorIngresarProveedor implements JsonDeserializer<RespuestaEndpointIngresarProveedor> {
     @Override
     public RespuestaEndpointIngresarProveedor deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
         Gson gson=new Gson();
