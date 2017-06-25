@@ -26,8 +26,9 @@ public class Productos extends AppCompatActivity implements iProductos {
         viewPager=(ViewPager)findViewById(R.id.viewPagerProducto);
         tabLayout=(TabLayout)findViewById(R.id.tabLayout);
         viewPager.setAdapter(new AdaptadorViewPager(getSupportFragmentManager(),fragments()));
-
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.lista_de_verificacion);
+        tabLayout.getTabAt(1).setIcon(R.drawable.formulario);
 
     }
 

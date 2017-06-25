@@ -10,5 +10,12 @@
     <string name="telefono_proveedor">Numero teléfono</string>
     <string name="codigo">Codigo</string>
     <string name="enviar">Aceptar</string>
+    <string name="nombre">Nombre</string>
+    <string name="costoCompra">Costo compra</string>
+    <string name="valorSugerido">Valor sugerido</string>
+    <string name="descuento">Descuento</string>
+    <string name="iva">Iva</string>
+    <string name="fechaVencimiento">Fecha vencimiento</string>
+    <string name="provedor">Proveedor</string>
 
 </resources>

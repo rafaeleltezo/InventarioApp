@@ -2,46 +2,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_margin="@dimen/activity_horizontal_margin">
 
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-        />
+            android:id="@+id/codigoProductoformulario"
+            android:hint="@string/codigo"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-             />
+            android:id="@+id/NombreProductoformulario"
+            android:hint="@string/nombre"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-      />
+            android:id="@+id/CostoCompraProductoformulario"
+            android:hint="@string/costoCompra" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-             />
+            android:id="@+id/ValorSugeridoProductoformulario"
+            android:hint="@string/valorSugerido" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-        />
+            android:id="@+id/descuentoProductoformulario"
+            android:hint="@string/descuento"/>
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ivaProductoformulario"
+            android:hint="@string/iva" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fechaVencimientoProductoformulario"
+            android:hint="@string/fechaVencimiento"
+            android:inputType="date"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ProvedorProductoformulario"
+            android:hint="@string/provedor" />
 
 
 </LinearLayout>

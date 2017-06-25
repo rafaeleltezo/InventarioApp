@@ -40,11 +40,8 @@ public class PresentadorProveedor implements iPresentadorProveedor {
             @Override
             public void onResponse(Call<RespuestaEndpointIngresarProveedor> call, Response<RespuestaEndpointIngresarProveedor> response) {
                 RespuestaEndpointIngresarProveedor respuestaProveedor=response.body();
-                //Toast.makeText(context, response.code(), Toast.LENGTH_SHORT).show();
                 codigoEstatusProvvedor=respuestaProveedor.getCodigoEstatus();
                 estadoDeingresoProveedor();
-
-                //hola mundo rafa
             }
 
             @Override
