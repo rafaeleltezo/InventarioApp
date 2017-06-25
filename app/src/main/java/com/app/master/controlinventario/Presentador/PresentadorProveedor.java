@@ -41,8 +41,8 @@ public class PresentadorProveedor implements iPresentadorProveedor {
             public void onResponse(Call<RespuestaEndpointIngresarProveedor> call, Response<RespuestaEndpointIngresarProveedor> response) {
                 RespuestaEndpointIngresarProveedor respuestaProveedor=response.body();
                 //Toast.makeText(context, response.code(), Toast.LENGTH_SHORT).show();
-                //codigoEstatusProvvedor=respuestaProveedor.getCodigoEstatus();
-                //estadoDeingresoProveedor();
+                codigoEstatusProvvedor=respuestaProveedor.getCodigoEstatus();
+                estadoDeingresoProveedor();
 
                 //hola mundo rafa
             }
@@ -56,7 +56,7 @@ public class PresentadorProveedor implements iPresentadorProveedor {
 
     @Override
     public void estadoDeingresoProveedor() {
-        if(codigoEstatusProvvedor.equals("5")){
+        if(codigoEstatusProvvedor.equals("2")){
             Toast.makeText(context, "Proveedor agregado correctamente", Toast.LENGTH_SHORT).show();
         }
         else {
