@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -19,6 +20,7 @@ public interface Endpoint {
     Call<RespuestaEndpoint> GenerarDatos();
 
     @POST("http://sisra.rsisco.com/controlinventario/CrearProveedores.php")
+    @FormUrlEncoded
     Call<RespuestaEndpointIngresarProveedor> CrearProveedores(
             @Field("nit") String nit, @Field("nombre")String nombre,
             @Field("direccion")String direccion, @Field("telefono") String telefono);
