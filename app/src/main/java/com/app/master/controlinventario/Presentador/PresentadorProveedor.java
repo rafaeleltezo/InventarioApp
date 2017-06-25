@@ -56,7 +56,7 @@ public class PresentadorProveedor implements iPresentadorProveedor {
 
     @Override
     public void estadoDeingresoProveedor() {
-        if(codigoEstatusProvvedor.equals("2")){
+        if(codigoEstatusProvvedor.equals("0")){
             Toast.makeText(context, "Proveedor agregado correctamente", Toast.LENGTH_SHORT).show();
         }
         else {
