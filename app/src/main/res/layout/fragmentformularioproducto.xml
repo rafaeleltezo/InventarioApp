@@ -10,7 +10,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/codigoProductoformulario"
-            android:hint="@string/codigo"/>
+            android:hint="@string/codigo"
+            android:inputType="text"/>
 
         <EditText
             android:layout_width="match_parent"
