@@ -67,6 +67,7 @@ public class AdaptadorRecyclerProveedor extends RecyclerView.Adapter<AdaptadorRe
             menu.setHeaderTitle("Select The Action");
             menu.add(0, v.getId(), 0, "Eliminar");//groupId, itemId, order, title
             menu.add(0, v.getId(), 0, "Editar");
+
         }
 
         @Override
