@@ -24,7 +24,7 @@ public class FragmentReciclerProducto extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       View view=inflater.inflate(R.layout.fragmentproducto,container,false);
+       View view=inflater.inflate(R.layout.fragmentrecyclerproducto,container,false);
         recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new AdaptadorRecyclerProducto(productos(),getContext()));

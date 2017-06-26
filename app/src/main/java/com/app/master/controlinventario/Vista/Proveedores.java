@@ -1,6 +1,9 @@
 package com.app.master.controlinventario.Vista;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,38 +19,33 @@ import com.app.master.controlinventario.Presentador.PresentadorProveedor;
 import com.app.master.controlinventario.Presentador.iPresentadorMainActivity;
 import com.app.master.controlinventario.Presentador.iPresentadorProveedor;
 import com.app.master.controlinventario.R;
+import com.app.master.controlinventario.Vista.AdaptadorresViewPager.AdaptadorviewPagerProveedores;
+import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioProducto;
+import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioProveedores;
+import com.app.master.controlinventario.Vista.Fragment.FragmentRecyclerProveedores;
 
 import java.util.ArrayList;
 
 public class Proveedores extends AppCompatActivity implements iProveedores {
-
-    private TextView nombre,nit,direccion,telefono;
-    private Button enviar;
-    iPresentadorProveedor presentador;
-
-
+    private ViewPager viewPager;
+    private TabLayout tabLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proveedores);
-        presentador=new PresentadorProveedor(this,this);
+        viewPager=(ViewPager)findViewById(R.id.viewPagerProveedor);
+        tabLayout=(TabLayout) findViewById(R.id.tablayoutProveedor);
+        viewPager.setAdapter(new AdaptadorviewPagerProveedores(getSupportFragmentManager(),fragment()));
+        tabLayout.setupWithViewPager(viewPager);
 
-        nombre=(TextView) findViewById(R.id.nombre_proveedor);
-        nit=(TextView) findViewById(R.id.nit_proveedor);
-        direccion=(TextView) findViewById(R.id.direccion_proveedor);
-        telefono=(TextView) findViewById(R.id.telefono_proveedor);
-        enviar=(Button) findViewById(R.id.enviar);
 
-        enviar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    }
 
-                presentador.IngresarProveedor(nit.getText().toString(),nombre.getText().toString(),
-                        direccion.getText().toString(),telefono.getText().toString());
-
-            }
-        });
-
+    public ArrayList<Fragment>fragment(){
+        ArrayList<Fragment> fragments=new ArrayList();
+        fragments.add(new FragmentFormularioProveedores());
+        fragments.add(new FragmentRecyclerProveedores());
+        return  fragments;
     }
 
     @Override
