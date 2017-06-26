@@ -37,6 +37,8 @@ public class Proveedores extends AppCompatActivity implements iProveedores {
         tabLayout=(TabLayout) findViewById(R.id.tablayoutProveedor);
         viewPager.setAdapter(new AdaptadorviewPagerProveedores(getSupportFragmentManager(),fragment()));
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.formulario);
+        tabLayout.getTabAt(1).setIcon(R.drawable.lista);
 
 
     }
