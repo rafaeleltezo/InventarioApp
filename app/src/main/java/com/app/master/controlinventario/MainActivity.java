@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.app.master.controlinventario.Modelo.Producto;
+import com.app.master.controlinventario.Modelo.Proveedor;
 import com.app.master.controlinventario.Vista.Productos;
 import com.app.master.controlinventario.Vista.Proveedores;
 

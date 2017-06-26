@@ -27,15 +27,16 @@ public class Productos extends AppCompatActivity implements iProductos {
         tabLayout=(TabLayout)findViewById(R.id.tabLayout);
         viewPager.setAdapter(new AdaptadorViewPager(getSupportFragmentManager(),fragments()));
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.getTabAt(0).setIcon(R.drawable.lista_de_verificacion);
-        tabLayout.getTabAt(1).setIcon(R.drawable.formulario);
+        tabLayout.getTabAt(0).setIcon(R.drawable.formulario);
+        tabLayout.getTabAt(1).setIcon(R.drawable.lista);
 
     }
 
     public ArrayList<Fragment> fragments(){
         ArrayList<Fragment>fragments=new ArrayList();
-        fragments.add(new FragmentReciclerProducto());
         fragments.add(new FragmentFormularioProducto());
+        fragments.add(new FragmentReciclerProducto());
+
         return fragments;
     }
 

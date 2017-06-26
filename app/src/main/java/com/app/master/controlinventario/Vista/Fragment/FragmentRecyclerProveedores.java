@@ -6,7 +6,9 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -33,6 +35,7 @@ public class FragmentRecyclerProveedores extends Fragment implements iFragmentRe
         View vista=inflater.inflate(R.layout.fragmentorecyclerproveedor,container,false);
         recyclerView=(RecyclerView)vista.findViewById(R.id.recyclerProveedor);
         presentador=new PresentadorProveedor(getContext(),this);
+        registerForContextMenu(vista.findViewById(R.id.recyclerProveedor));
         return vista;
     }
 
@@ -56,5 +59,10 @@ public class FragmentRecyclerProveedores extends Fragment implements iFragmentRe
     @Override
     public void establecerAdaptador(AdaptadorRecyclerProveedor adaptadorRecyclerProveedor) {
         recyclerView.setAdapter(adaptadorRecyclerProveedor);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+
     }
 }

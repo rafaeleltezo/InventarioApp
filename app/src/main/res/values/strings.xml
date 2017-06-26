@@ -17,5 +17,7 @@
     <string name="iva">Iva</string>
     <string name="fechaVencimiento">Fecha vencimiento</string>
     <string name="provedor">Proveedor</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="editar">Editar</string>
 
 </resources>
