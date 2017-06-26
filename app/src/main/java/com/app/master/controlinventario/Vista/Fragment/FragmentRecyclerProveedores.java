@@ -1,5 +1,6 @@
 package com.app.master.controlinventario.Vista.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.app.master.controlinventario.Modelo.Proveedor;
+import com.app.master.controlinventario.Presentador.PresentadorProveedor;
+import com.app.master.controlinventario.Presentador.iPresentadorProveedor;
 import com.app.master.controlinventario.R;
 import com.app.master.controlinventario.Vista.AdaptadorRecicler.AdaptadorRecyclerProveedor;
 
@@ -22,24 +25,36 @@ import java.util.ArrayList;
 public class FragmentRecyclerProveedores extends Fragment implements iFragmentRecyclerProveedores {
 
     private RecyclerView recyclerView;
+    private iPresentadorProveedor presentador;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View vista=inflater.inflate(R.layout.fragmentorecyclerproveedor,container,false);
         recyclerView=(RecyclerView)vista.findViewById(R.id.recyclerProveedor);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
-        recyclerView.setAdapter(new AdaptadorRecyclerProveedor(proveedores(),getContext()));
+        presentador=new PresentadorProveedor(getContext(),this);
         return vista;
     }
 
-    ArrayList<Proveedor>proveedores(){
-        ArrayList<Proveedor>proveedor=new ArrayList();
-        proveedor.add(new Proveedor("021","pstobon","calle","312"));
-        proveedor.add(new Proveedor("022","pesis","calle","312"));
-        proveedor.add(new Proveedor("023","on","calle","312"));
-        proveedor.add(new Proveedor("024","pson","calle","312"));
-        proveedor.add(new Proveedor("025","ton","calle","312"));
-        return proveedor;
+
+    @Override
+    public GridLayoutManager crearLayaout() {
+        GridLayoutManager grid=new GridLayoutManager(getContext(),2);
+        return grid;
+    }
+
+    @Override
+    public void establecerLayout(GridLayoutManager gridLayoutManager) {
+        recyclerView.setLayoutManager(gridLayoutManager);
+    }
+
+    @Override
+    public AdaptadorRecyclerProveedor crearAdaptador(ArrayList<Proveedor> proveedores, Context context) {
+        return  new AdaptadorRecyclerProveedor(proveedores,context);
+    }
+
+    @Override
+    public void establecerAdaptador(AdaptadorRecyclerProveedor adaptadorRecyclerProveedor) {
+        recyclerView.setAdapter(adaptadorRecyclerProveedor);
     }
 }

@@ -9,4 +9,6 @@ public interface iPresentadorProveedor {
     public void IngresarProveedor(String nit,String nombre,String direccion,String telefono);
     public void estadoDeingresoProveedor();
     public void listarProveedor();
+    public void establecerLayout();
+    public void establecerRecycleView();
 }

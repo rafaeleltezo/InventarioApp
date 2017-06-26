@@ -9,6 +9,7 @@ import com.app.master.controlinventario.Modelo.ResFull.RespuestaEndpointIngresar
 import com.app.master.controlinventario.Modelo.ResFull.RespuestaProveedores;
 import com.app.master.controlinventario.Modelo.ResFull.RestApiAdapter;
 import com.app.master.controlinventario.Vista.Fragment.iFragmentFormularioProveedores;
+import com.app.master.controlinventario.Vista.Fragment.iFragmentRecyclerProveedores;
 import com.app.master.controlinventario.Vista.Proveedores;
 import com.app.master.controlinventario.Vista.iProveedores;
 import com.google.gson.Gson;
@@ -25,19 +26,27 @@ import retrofit2.Response;
 
 public class PresentadorProveedor implements iPresentadorProveedor {
 
-    private iProveedores proveedores;
-    private iFragmentFormularioProveedores iFragmentFormularioProveedores;
+    private iProveedores iproveedores;
+    private iFragmentFormularioProveedores ifragmentFormularioProveedores;
+    private iFragmentRecyclerProveedores ifragmentRecyclerProveedores;
     private Context context;
     private String codigoEstatusProvvedor;
-    private ArrayList<Proveedor>Proveedores;
+    private ArrayList<Proveedor> arrayproveedores;
+
+    public PresentadorProveedor(Context context,iFragmentRecyclerProveedores iFragmentRecyclerProveedores){
+        this.context=context;
+        this.ifragmentRecyclerProveedores=iFragmentRecyclerProveedores;
+        listarProveedor();
+    }
 
     public PresentadorProveedor(Context context,iProveedores iproveedores){
         this.context=context;
-        this.proveedores=iproveedores;
+        this.iproveedores=iproveedores;
     }
+
     public PresentadorProveedor(Context context,iFragmentFormularioProveedores iFragmentFormularioProveedores){
         this.context=context;
-        this.iFragmentFormularioProveedores=iFragmentFormularioProveedores;
+        this.ifragmentFormularioProveedores=iFragmentFormularioProveedores;
     }
 
 
@@ -53,7 +62,6 @@ public class PresentadorProveedor implements iPresentadorProveedor {
             public void onResponse(Call<RespuestaEndpointIngresarProveedor> call, Response<RespuestaEndpointIngresarProveedor> response) {
                 RespuestaEndpointIngresarProveedor respuestaProveedor=response.body();
                 codigoEstatusProvvedor=respuestaProveedor.getCodigoEstatus();
-                Toast.makeText(context,codigoEstatusProvvedor.toString(), Toast.LENGTH_SHORT).show();
                 estadoDeingresoProveedor();
             }
 
@@ -84,8 +92,8 @@ public class PresentadorProveedor implements iPresentadorProveedor {
             @Override
             public void onResponse(Call<RespuestaProveedores> call, Response<RespuestaProveedores> response) {
                RespuestaProveedores respuestaProveedores=response.body();
-                Proveedores=respuestaProveedores.getProveedores();
-
+                arrayproveedores=respuestaProveedores.getProveedores();
+                establecerRecycleView();
             }
 
             @Override
@@ -93,5 +101,16 @@ public class PresentadorProveedor implements iPresentadorProveedor {
                 Toast.makeText(context, "Error al conectarse al servidor, intente mas tarde", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void establecerLayout() {
+        ifragmentRecyclerProveedores.establecerLayout(ifragmentRecyclerProveedores.crearLayaout());
+    }
+
+    @Override
+    public void establecerRecycleView() {
+        establecerLayout();
+        ifragmentRecyclerProveedores.establecerAdaptador(ifragmentRecyclerProveedores.crearAdaptador(arrayproveedores,context));
     }
 }
