@@ -41,6 +41,7 @@ public class PresentadorProveedor implements iPresentadorProveedor {
             public void onResponse(Call<RespuestaEndpointIngresarProveedor> call, Response<RespuestaEndpointIngresarProveedor> response) {
                 RespuestaEndpointIngresarProveedor respuestaProveedor=response.body();
                 codigoEstatusProvvedor=respuestaProveedor.getCodigoEstatus();
+                Toast.makeText(context,codigoEstatusProvvedor.toString(), Toast.LENGTH_SHORT).show();
                 estadoDeingresoProveedor();
             }
 
