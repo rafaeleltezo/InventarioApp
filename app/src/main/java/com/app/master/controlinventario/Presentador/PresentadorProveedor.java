@@ -10,7 +10,6 @@ import com.app.master.controlinventario.Modelo.ResFull.RespuestaProveedores;
 import com.app.master.controlinventario.Modelo.ResFull.RestApiAdapter;
 import com.app.master.controlinventario.Vista.Fragment.iFragmentFormularioProveedores;
 import com.app.master.controlinventario.Vista.Fragment.iFragmentRecyclerProveedores;
-import com.app.master.controlinventario.Vista.Proveedores;
 import com.app.master.controlinventario.Vista.iProveedores;
 import com.google.gson.Gson;
 
@@ -61,8 +60,11 @@ public class PresentadorProveedor implements iPresentadorProveedor {
             @Override
             public void onResponse(Call<RespuestaEndpointIngresarProveedor> call, Response<RespuestaEndpointIngresarProveedor> response) {
                 RespuestaEndpointIngresarProveedor respuestaProveedor=response.body();
+                //Toast.makeText(context, response.code(), Toast.LENGTH_SHORT).show();
                 codigoEstatusProvvedor=respuestaProveedor.getCodigoEstatus();
-                estadoDeingresoProveedor();
+                //estadoDeingresoProveedor();
+
+                //hola mundo rafa
             }
 
             @Override
@@ -74,7 +76,7 @@ public class PresentadorProveedor implements iPresentadorProveedor {
 
     @Override
     public void estadoDeingresoProveedor() {
-        if(codigoEstatusProvvedor.equals("0")){
+        if(codigoEstatusProvvedor.equals("5")){
             Toast.makeText(context, "Proveedor agregado correctamente", Toast.LENGTH_SHORT).show();
         }
         else {

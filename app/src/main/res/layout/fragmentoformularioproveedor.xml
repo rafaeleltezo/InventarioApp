@@ -1,37 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_height="match_parent">
 
-    <EditText
+
+
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/nombre_proveedor"
-        android:hint="@string/nombre_proveedor"/>
+        >
 
-    <EditText
-        android:id="@+id/nit_proveedor"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Este modulo te permite crear proveedores de una forma rapida y secilla."
+                android:layout_alignParentTop="true"
+                android:textSize="15sp"
+                android:textColor="#000"
+                />
+
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/nit_proveedor"/>
+        android:layout_marginTop="5dp"
+        >
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/direccion_proveedor"
-        android:hint="@string/direccion_proveedor"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            >
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="false">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/telefono_proveedor"
-        android:hint="@string/telefono_proveedor"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ingrese el nit"
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/enviar"
-        android:id="@+id/enviar"/>
+                        />
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:id="@+id/nit_proveedor"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="nombre del proveedor"
+
+                        />
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:id="@+id/nombre_proveedor"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="Direccion" />
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:id="@+id/direccion_proveedor"
+                        android:layout_height="wrap_content" />
+
+                       <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Telefono" />
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:id="@+id/telefono_proveedor"
+                        android:layout_height="wrap_content" />
+
+
+
+                        <Button
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:id="@+id/enviar"
+                            android:text="Guardar"
+                            android:textStyle="bold"
+                            android:background="#C51162"
+                            android:textColor="@android:color/white"
+                            android:gravity="center"
+                            android:layout_height="wrap_content" />
+
+
+
+
+                </LinearLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

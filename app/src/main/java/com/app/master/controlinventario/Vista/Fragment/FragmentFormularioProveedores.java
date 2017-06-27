@@ -3,8 +3,7 @@ package com.app.master.controlinventario.Vista.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +13,6 @@ import android.widget.TextView;
 import com.app.master.controlinventario.Presentador.PresentadorProveedor;
 import com.app.master.controlinventario.Presentador.iPresentadorProveedor;
 import com.app.master.controlinventario.R;
-import com.app.master.controlinventario.Vista.AdaptadorRecicler.AdaptadorRecyclerProducto;
-import com.app.master.controlinventario.Vista.AdaptadorRecicler.AdaptadorRecyclerProveedor;
 
 /**
  * Created by Rafael p on 26/6/2017.
@@ -44,6 +41,17 @@ public class FragmentFormularioProveedores extends Fragment implements iFragment
 
                 presentador.IngresarProveedor(nit.getText().toString(),nombre.getText().toString(),
                         direccion.getText().toString(),telefono.getText().toString());
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Informacion")
+                        .setMessage("Datos Guardados correctamente datos!")
+                        .setPositiveButton("OK", null)
+                        .show();
+
+                nit.setText("");
+                nombre.setText("");
+                direccion.setText("");
+                telefono.setText("");
 
             }
         });
