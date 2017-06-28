@@ -16,6 +16,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioCategoria;
+import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioProducto;
 import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioProveedores;
 import com.app.master.controlinventario.Vista.Proveedores;
 
@@ -104,6 +106,14 @@ public class MainActivity extends AppCompatActivity
         {
             case R.id.Proveedores:
                 fragment = new FragmentFormularioProveedores();
+                FragmentTransaction = true;
+                break;
+            case R.id.Categoria:
+                fragment = new FragmentFormularioCategoria();
+                FragmentTransaction = true;
+                break;
+            case R.id.Producto:
+                fragment = new FragmentFormularioProducto();
                 FragmentTransaction = true;
                 break;
 

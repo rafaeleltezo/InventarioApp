@@ -7,13 +7,13 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Crear Proveerdores" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/Categoria"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="Crear Categoria" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/Producto"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="Crear Producto" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"

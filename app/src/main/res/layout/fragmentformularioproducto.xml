@@ -1,60 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="@dimen/activity_horizontal_margin">
+    android:layout_height="match_parent">
 
 
-        <EditText
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/codigoProductoformulario"
-            android:hint="@string/codigo"
-            android:inputType="text"/>
+            >
 
-        <EditText
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    >
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Este modulo te permite crear los productos que manejas en tu negocio."
+                            android:layout_alignParentTop="true"
+                            android:textSize="15sp"
+                            android:textColor="#000"
+                            />
+
+
+
+                </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/NombreProductoformulario"
-            android:hint="@string/nombre"/>
+            android:layout_marginTop="5dp"
+            >
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/CostoCompraProductoformulario"
-            android:hint="@string/costoCompra" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    >
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fillViewport="false">
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:orientation="vertical"
+                                    android:layout_height="wrap_content">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ValorSugeridoProductoformulario"
-            android:hint="@string/valorSugerido" />
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Codigo del producto"
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/descuentoProductoformulario"
-            android:hint="@string/descuento"/>
+                                            />
+                                        <EditText
+                                            android:layout_width="fill_parent"
+                                            android:id="@+id/codigoProductoformulario"
+                                            android:layout_height="wrap_content" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ivaProductoformulario"
-            android:hint="@string/iva" />
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="nombre del producto"
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/fechaVencimientoProductoformulario"
-            android:hint="@string/fechaVencimiento"
-            android:inputType="date"/>
+                                            />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ProvedorProductoformulario"
-            android:hint="@string/provedor" />
+                                        <EditText
+                                            android:layout_width="fill_parent"
+                                            android:id="@+id/nombreProductoformulario"
+                                            android:layout_height="wrap_content" />
 
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="7dp"
+                                            android:text="Selecciona la categoria" />
+
+
+                                        <Spinner
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/categoriaProductoformulario" />
+
+                                        <TextView
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Selecciona el proveedor" />
+                                        <Spinner
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/proveedorProductoformulario" />
+
+
+
+                                        <TextView
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Valor compra" />
+
+                                        <EditText
+                                            android:layout_width="fill_parent"
+                                            android:id="@+id/compraProductoformulario"
+                                            android:layout_height="wrap_content" />
+
+                                        <TextView
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Valor venta" />
+
+                                        <EditText
+                                            android:layout_width="fill_parent"
+                                            android:id="@+id/ventaProductoformulario"
+                                            android:layout_height="wrap_content" />
+
+
+
+                                        <Button
+                                            android:layout_marginTop="10dp"
+                                            android:layout_width="match_parent"
+                                            android:id="@+id/enviarProductoformulario"
+                                            android:text="Guardar"
+                                            android:textStyle="bold"
+                                            android:background="#C51162"
+                                            android:textColor="@android:color/white"
+                                            android:gravity="center"
+                                            android:layout_height="wrap_content" />
+
+
+
+
+                                </LinearLayout>
+                        </ScrollView>
+
+                </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
 
 </LinearLayout>
