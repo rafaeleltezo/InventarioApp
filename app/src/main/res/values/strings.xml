@@ -19,5 +19,6 @@
     <string name="provedor">Proveedor</string>
     <string name="eliminar">Eliminar</string>
     <string name="editar">Editar</string>
+    <string name="title_activity_scaner_inventario">ScanerInventario</string>
 
 </resources>

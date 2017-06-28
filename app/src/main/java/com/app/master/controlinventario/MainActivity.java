@@ -21,6 +21,7 @@ import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioProduct
 import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioProveedores;
 import com.app.master.controlinventario.Vista.Productos;
 import com.app.master.controlinventario.Vista.Proveedores;
+import com.app.master.controlinventario.Vista.ScannerProveedor;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(MainActivity.this,Proveedores.class);
+                Intent i=new Intent(MainActivity.this,ScannerProveedor.class);
                startActivity(i);
 
             }
