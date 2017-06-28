@@ -76,12 +76,19 @@ public class PresentadorProveedor implements iPresentadorProveedor {
 
     @Override
     public void estadoDeingresoProveedor() {
-        if(codigoEstatusProvvedor.equals("5")){
-            Toast.makeText(context, "Proveedor agregado correctamente", Toast.LENGTH_SHORT).show();
+        switch (codigoEstatusProvvedor){
+            case "0":
+                Toast.makeText(context, "Proveedor agregado correctamente", Toast.LENGTH_SHORT).show();
+                break;
+            case "1":
+                Toast.makeText(context, "Nit esta en uso", Toast.LENGTH_SHORT).show();
+                break;
+            case "2":
+                Toast.makeText(context, "Datos faltantes", Toast.LENGTH_SHORT).show();
+                default:
+                    Toast.makeText(context, "Error desconocido", Toast.LENGTH_SHORT).show();
         }
-        else {
-            Toast.makeText(context, "Error al agregar, intente mas tarde", Toast.LENGTH_SHORT).show();
-        }
+
     }
 
     @Override

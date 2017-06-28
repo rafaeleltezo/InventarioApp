@@ -73,7 +73,7 @@ public class AdaptadorRecyclerProveedor extends RecyclerView.Adapter<AdaptadorRe
         @Override
         public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
             menu.setHeaderTitle("Select The Action");
-            menu.add(0, R.id.menuEliminar, 0, "Eliminar");//groupId, itemId, order, title
+            menu.add(0, R.id.menuEliminar, 0, "Eliminar");
             menu.add(0, R.id.menuEditar, 0, "Editar");
         }
 
@@ -94,7 +94,7 @@ public class AdaptadorRecyclerProveedor extends RecyclerView.Adapter<AdaptadorRe
 
         @Override
         public void onClick(View v) {
-
+            Log.d("mensaje","no sirve");
         }
     }
 }
