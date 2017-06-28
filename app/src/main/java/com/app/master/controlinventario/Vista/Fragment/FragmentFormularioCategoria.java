@@ -16,7 +16,7 @@ import com.app.master.controlinventario.R;
 
 public class FragmentFormularioCategoria extends Fragment {
 
-    private TextView codigoCategoria,  nombreCategoria;
+
 
 
     @Nullable
