@@ -19,6 +19,7 @@ import android.view.View;
 import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioCategoria;
 import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioProducto;
 import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioProveedores;
+import com.app.master.controlinventario.Vista.Productos;
 import com.app.master.controlinventario.Vista.Proveedores;
 
 public class MainActivity extends AppCompatActivity
@@ -99,33 +100,40 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        boolean FragmentTransaction = false;
-        Fragment fragment = null;
+       // boolean FragmentTransaction = false;
+        //Fragment fragment = null;
+        Intent intento=null;
 
         switch (id)
         {
             case R.id.Proveedores:
-                fragment = new FragmentFormularioProveedores();
-                FragmentTransaction = true;
+               // fragment = new FragmentFormularioProveedores();
+               // FragmentTransaction = true;
+                intento=new Intent(MainActivity.this,Proveedores.class);
+                startActivity(intento);
                 break;
             case R.id.Categoria:
-                fragment = new FragmentFormularioCategoria();
-                FragmentTransaction = true;
+                //fragment = new FragmentFormularioCategoria();
+                //FragmentTransaction = true;
+
+                startActivity(intento);
                 break;
             case R.id.Producto:
-                fragment = new FragmentFormularioProducto();
-                FragmentTransaction = true;
+                //fragment = new FragmentFormularioProducto();
+                //FragmentTransaction = true;
+                intento=new Intent(MainActivity.this,Productos.class);
+                startActivity(intento);
                 break;
 
 
         }
-
+    /*
         if(FragmentTransaction)
         {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.framento,fragment)
                     .commit();
-        }
+        }*/
 
         item.setChecked(true);
         getSupportActionBar().setTitle(item.getTitle());
