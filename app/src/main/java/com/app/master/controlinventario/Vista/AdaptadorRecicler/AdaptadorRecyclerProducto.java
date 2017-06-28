@@ -27,12 +27,14 @@ import java.util.ArrayList;
 public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRecyclerProducto.viewHolder> {
 
     private ArrayList<Producto> productos;
+
     private Context context;
 
     public AdaptadorRecyclerProducto(ArrayList<Producto> productos, Context context){
         this.productos=productos;
         this.context=context;
     }
+
     @Override
     public viewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.cartaproducto,parent,false);
@@ -46,7 +48,8 @@ public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRec
         holder.codigo.setText(producto.getCodigo());
         holder.nombre.setText(producto.getNombre());
         holder.precio.setText(String.valueOf(producto.getCostoCompra()));
-        Picasso.with(context).load(producto.getImagen()).into(holder.foto);
+        //Picasso.with(context).load(producto.getImagen()).into(holder.foto);
+
     }
 
     @Override

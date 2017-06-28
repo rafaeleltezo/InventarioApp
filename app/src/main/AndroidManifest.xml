@@ -24,7 +24,8 @@
         </activity>
         <activity android:name=".Vista.Proveedores" />
         <activity android:name=".Vista.Productos" />
-        <activity android:name=".Vista.ScannerProveedor"/>
+        <activity android:name=".Vista.ScannerProveedor" />
+        <activity android:name=".Vista.ProductoAgregar"></activity>
     </application>
 
 </manifest>

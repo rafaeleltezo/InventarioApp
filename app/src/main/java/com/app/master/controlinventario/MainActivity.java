@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioCategoria;
 import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioProducto;
@@ -22,6 +23,8 @@ import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioProveed
 import com.app.master.controlinventario.Vista.Productos;
 import com.app.master.controlinventario.Vista.Proveedores;
 import com.app.master.controlinventario.Vista.ScannerProveedor;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -61,6 +64,15 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+
+        Bundle bundle=getIntent().getExtras();
+        if(bundle!=null){
+            ArrayList<String>cadena;
+            cadena=(ArrayList<String>) bundle.get("cadena");
+            for (String c:cadena) {
+                Toast.makeText(this, c, Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     @Override
