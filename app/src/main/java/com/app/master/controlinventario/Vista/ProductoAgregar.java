@@ -37,15 +37,15 @@ public class ProductoAgregar extends AppCompatActivity implements iProductoAgreg
 
         String[]valores=cadena.split(":");
 
-        String codigo=valores[0];
-        String nombre=valores[1];
-        String fecha=valores[2];
-        String fechaVencimiento=valores[3];
-        String imagen=valores[8];
-        double costoCompra=Double.parseDouble(valores[4]);
-        double valorSugerido=Double.parseDouble(valores[5]);
-        double descuento=Double.parseDouble(valores[6]);
-        double iva=Double.parseDouble(valores[7]);
+        String codigo=valores[1];
+        String nombre=valores[2];
+        String fecha=valores[3];
+        String fechaVencimiento=valores[4];
+        String imagen=valores[9];
+        double costoCompra=Double.parseDouble(valores[5]);
+        double valorSugerido=Double.parseDouble(valores[6]);
+        double descuento=Double.parseDouble(valores[7]);
+        double iva=Double.parseDouble(valores[8]);
         productos.add(new Producto(codigo,nombre, fecha, fechaVencimiento,costoCompra, valorSugerido, descuento, iva, imagen));
         }
 

@@ -39,7 +39,7 @@ public class Scanner extends Activity implements ZBarScannerView.ResultHandler {
         super.onCreate(state);
         mScannerView = new ZBarScannerView(this);    // Programmatically initialize the scanner view
         setContentView(mScannerView);                // Set the scanner view as the content view
-        intento=new Intent(this, ProductoAgregar.class);
+
         cadena=new ArrayList();
         boton=new FloatingActionButton(this);
         boton.setLayoutParams(new AbsListView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -76,6 +76,7 @@ public class Scanner extends Activity implements ZBarScannerView.ResultHandler {
             mScannerView.resumeCameraPreview(this);
             desencriptarImagen(rawResult.getContents());
 
+
         } catch (InterruptedException e) {
             e.printStackTrace();
             Toast.makeText(this, "Error al escanear", Toast.LENGTH_SHORT).show();
@@ -83,14 +84,36 @@ public class Scanner extends Activity implements ZBarScannerView.ResultHandler {
 
     }
     public void desencriptarImagen(String cadena){
-        this.cadena.add(cadena);
+        String [] comparador=cadena.split(":");
+        if(comparador[0].equals("v")|comparador[0].equals("p")){
+            this.cadena.add(cadena);
+            Toast.makeText(this, "Capturado", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(this, "Codigo no reconocido", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        intento.putExtra("cadena",cadena);
-        startActivity(intento);
+        try {
+            String[] comparador = cadena.get(0).split(":");
+            switch (comparador[0]) {
+                case "p":
+                    intento = new Intent(this, ProductoAgregar.class);
+                    intento.putExtra("cadena", cadena);
+                    startActivity(intento);
+                    break;
+                case "v":
+                    intento = new Intent(this, VentaAgregar.class);
+                    intento.putExtra("cadena", cadena);
+                    startActivity(intento);
+                    break;
+            }
 
+        }catch (Exception e){
+            Toast.makeText(this, "Error de codigo", Toast.LENGTH_SHORT).show();
+        }
     }
 }
