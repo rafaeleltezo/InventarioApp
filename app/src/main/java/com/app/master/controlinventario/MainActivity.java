@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,12 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioCategoria;
-import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioProducto;
-import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioProveedores;
 import com.app.master.controlinventario.Vista.Productos;
 import com.app.master.controlinventario.Vista.Proveedores;
-import com.app.master.controlinventario.Vista.ScannerProveedor;
+import com.app.master.controlinventario.Vista.Scanner;
 
 import java.util.ArrayList;
 
@@ -59,7 +55,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(MainActivity.this,ScannerProveedor.class);
+                Intent i=new Intent(MainActivity.this,Scanner.class);
                startActivity(i);
 
             }

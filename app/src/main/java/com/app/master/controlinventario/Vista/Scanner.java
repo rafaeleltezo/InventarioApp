@@ -15,6 +15,7 @@ import android.widget.AbsListView;
 import android.widget.Toast;
 
 import com.app.master.controlinventario.MainActivity;
+import com.app.master.controlinventario.Modelo.Producto;
 
 import java.util.ArrayList;
 
@@ -27,11 +28,11 @@ import static android.content.ContentValues.TAG;
  * Created by Rafael p on 27/6/2017.
  */
 
-public class ScannerProveedor extends Activity implements ZBarScannerView.ResultHandler {
+public class Scanner extends Activity implements ZBarScannerView.ResultHandler {
     private ZBarScannerView mScannerView;
     private Intent intento;
     FloatingActionButton boton;
-    ArrayList<String> cadenas;
+    ArrayList<String> cadena;
 
     @Override
     public void onCreate(Bundle state) {
@@ -39,7 +40,7 @@ public class ScannerProveedor extends Activity implements ZBarScannerView.Result
         mScannerView = new ZBarScannerView(this);    // Programmatically initialize the scanner view
         setContentView(mScannerView);                // Set the scanner view as the content view
         intento=new Intent(this, ProductoAgregar.class);
-        cadenas=new ArrayList();
+        cadena=new ArrayList();
         boton=new FloatingActionButton(this);
         boton.setLayoutParams(new AbsListView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
@@ -62,9 +63,9 @@ public class ScannerProveedor extends Activity implements ZBarScannerView.Result
     public void handleResult(Result rawResult) {
         // Do something with the result here
 
-        Log.v(TAG, rawResult.getContents()); // Prints scan results
-        Log.v(TAG, rawResult.getBarcodeFormat().getName()); // Prints the scan format (qrcode, pdf417 etc.)
-        Toast.makeText(this, rawResult.getContents(), Toast.LENGTH_SHORT).show();
+       // Log.v(TAG, rawResult.getContents()); // Prints scan results
+       // Log.v(TAG, rawResult.getBarcodeFormat().getName()); // Prints the scan format (qrcode, pdf417 etc.)
+        //Toast.makeText(this, rawResult.getContents(), Toast.LENGTH_SHORT).show();
         Uri notificacion=RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         Ringtone rintn=RingtoneManager.getRingtone(this,notificacion);
         rintn.play();
@@ -73,7 +74,7 @@ public class ScannerProveedor extends Activity implements ZBarScannerView.Result
         try {
             Thread.sleep(2000);
             mScannerView.resumeCameraPreview(this);
-            cadenas.add(rawResult.getContents());
+            desencriptarImagen(rawResult.getContents());
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -81,11 +82,14 @@ public class ScannerProveedor extends Activity implements ZBarScannerView.Result
         }
 
     }
+    public void desencriptarImagen(String cadena){
+        this.cadena.add(cadena);
+    }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        intento.putExtra("cadena",cadenas);
+        intento.putExtra("cadena",cadena);
         startActivity(intento);
 
     }

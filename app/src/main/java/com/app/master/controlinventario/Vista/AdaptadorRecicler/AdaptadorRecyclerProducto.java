@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.app.master.controlinventario.Modelo.Producto;
 import com.app.master.controlinventario.R;
+import com.app.master.controlinventario.Vista.ProductoAgregar;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -27,9 +28,8 @@ import java.util.ArrayList;
 public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRecyclerProducto.viewHolder> {
 
     private ArrayList<Producto> productos;
-
     private Context context;
-
+    private View view;
     public AdaptadorRecyclerProducto(ArrayList<Producto> productos, Context context){
         this.productos=productos;
         this.context=context;
@@ -37,7 +37,7 @@ public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRec
 
     @Override
     public viewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.cartaproducto,parent,false);
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cartaproducto, parent, false);
         return new viewHolder(view);
     }
 
@@ -66,7 +66,7 @@ public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRec
             codigo=(TextView)                     itemView.findViewById(R.id.codigoProductoCarta);
             nombre=(TextView)                     itemView.findViewById(R.id.NombreCartaProducto);
             precio=(TextView)                     itemView.findViewById(R.id.PrecioCartaProducto);
-            foto=(ImageView)                      itemView.findViewById(R.id.imagenCartaProducto);
+           // foto=(ImageView)                      itemView.findViewById(R.id.imagenCartaProducto);
 
         }
 
