@@ -72,7 +72,7 @@ public class Scanner extends Activity implements ZBarScannerView.ResultHandler {
 
         // If you would like to resume scanning, call this method below:
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             mScannerView.resumeCameraPreview(this);
             desencriptarImagen(rawResult.getContents());
 
