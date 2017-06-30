@@ -106,7 +106,7 @@ public class Scanner extends Activity implements ZBarScannerView.ResultHandler {
                     startActivity(intento);
                     break;
                 case "v":
-                    intento = new Intent(this, VentaAgregar.class);
+                    intento = new Intent(this, ProductoAgregar.class);
                     intento.putExtra("cadena", cadena);
                     startActivity(intento);
                     break;

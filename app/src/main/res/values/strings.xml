@@ -20,5 +20,7 @@
     <string name="eliminar">Eliminar</string>
     <string name="editar">Editar</string>
     <string name="title_activity_scaner_inventario">ScanerInventario</string>
+    <string name="textoBotonVender">Vender productos</string>
+    <string name="textoBotonAgregarProducto">Agregar productos</string>
 
 </resources>
