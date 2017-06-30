@@ -1,6 +1,7 @@
 package com.app.master.controlinventario.Vista.AdaptadorRecicler;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.app.master.controlinventario.Modelo.Producto;
 import com.app.master.controlinventario.R;
+import com.app.master.controlinventario.Vista.DetallesProducto;
 import com.app.master.controlinventario.Vista.ProductoAgregar;
 import com.squareup.picasso.Picasso;
 
@@ -42,13 +44,30 @@ public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRec
     }
 
     @Override
-    public void onBindViewHolder(viewHolder holder, int position) {
-        Producto producto=productos.get(position);
+    public void onBindViewHolder(final viewHolder holder, int position) {
+        final Producto producto=productos.get(position);
 
         holder.codigo.setText(producto.getCodigo());
         holder.nombre.setText(producto.getNombre());
         holder.precio.setText(String.valueOf(producto.getCostoCompra()));
-        //Picasso.with(context).load(producto.getImagen()).into(holder.foto);
+        Picasso.with(context).load(producto.getImagen()).into(holder.foto);
+        holder.foto.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            public void onClick(View v) {
+                Intent intent=new Intent(context, DetallesProducto.class);
+                intent.putExtra("codigo",producto.getCodigo());
+                intent.putExtra("nombre",producto.getNombre());
+                intent.putExtra("fecha",producto.getFecha());
+                intent.putExtra("fechaVencimiento",producto.getFechaVencimiento());
+                intent.putExtra("costoCompra",producto.getCostoCompra());
+                intent.putExtra("valorSugerido",producto.getValorSugerido());
+                intent.putExtra("descuento",producto.getDescuento());
+                intent.putExtra("iva",producto.getIva());
+                //intent.putExtra("foto",producto.getImagen());
+                context.startActivity(intent);
+            }
+        });
 
     }
 
@@ -66,7 +85,7 @@ public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRec
             codigo=(TextView)                     itemView.findViewById(R.id.codigoProductoCarta);
             nombre=(TextView)                     itemView.findViewById(R.id.NombreCartaProducto);
             precio=(TextView)                     itemView.findViewById(R.id.PrecioCartaProducto);
-           // foto=(ImageView)                      itemView.findViewById(R.id.imagenCartaProducto);
+            foto=(ImageView)                      itemView.findViewById(R.id.imagenCartaProducto);
 
         }
 
