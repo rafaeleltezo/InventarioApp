@@ -62,6 +62,12 @@ public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRec
                 .into(holder.imagenCodigoQr);
         holder.foto.setOnClickListener(new View.OnClickListener() {
             @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Falta este codigo", Toast.LENGTH_SHORT).show();
+            }
+        });
+        holder.foto.setOnClickListener(new View.OnClickListener() {
+            @Override
 
             public void onClick(View v) {
                 Intent intent=new Intent(context, DetallesProducto.class);
