@@ -70,7 +70,7 @@ public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRec
                 intent.putExtra("valorSugerido",producto.getValorSugerido());
                 intent.putExtra("descuento",producto.getDescuento());
                 intent.putExtra("iva",producto.getIva());
-                //intent.putExtra("foto",producto.getImagen());
+                intent.putExtra("foto",producto.getImagen());
                 context.startActivity(intent);
             }
         });

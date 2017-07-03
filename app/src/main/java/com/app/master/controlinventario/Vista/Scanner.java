@@ -84,12 +84,16 @@ public class Scanner extends Activity implements ZBarScannerView.ResultHandler {
 
     }
     public void desencriptarImagen(String cadena){
-        String [] comparador=cadena.split(":");
-        if(comparador[0].equals("v")|comparador[0].equals("p")){
-            this.cadena.add(cadena);
-            Toast.makeText(this, "Capturado", Toast.LENGTH_SHORT).show();
+        String [] comparador=cadena.split("'");
+        if(comparador.length==10) {
+            if (comparador[0].equals("p")) {
+                this.cadena.add(cadena);
+                Toast.makeText(this, "Capturado", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Codigo no reconocido", Toast.LENGTH_SHORT).show();
+            }
         }else {
-            Toast.makeText(this, "Codigo no reconocido", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Malformación de codigo", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -98,18 +102,14 @@ public class Scanner extends Activity implements ZBarScannerView.ResultHandler {
     protected void onDestroy() {
         super.onDestroy();
         try {
-            String[] comparador = cadena.get(0).split(":");
+            String[] comparador = cadena.get(0).split("'");
             switch (comparador[0]) {
                 case "p":
                     intento = new Intent(this, ProductoAgregar.class);
                     intento.putExtra("cadena", cadena);
                     startActivity(intento);
                     break;
-                case "v":
-                    intento = new Intent(this, ProductoAgregar.class);
-                    intento.putExtra("cadena", cadena);
-                    startActivity(intento);
-                    break;
+
             }
 
         }catch (Exception e){

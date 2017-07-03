@@ -11,6 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:id="@+id/editarFotoProdcuto"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -23,15 +27,11 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editarFeechaProducto"/>
+        android:id="@+id/editarFechaProducto"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editarFechaVencimientoProducto"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editarImagenProducto"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,10 +59,5 @@
             android:layout_height="wrap_content"
             android:id="@+id/editarEliminar"
             android:text="@string/eliminar" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/editarGuardar"
-            android:text="@string/guardar"/>
     </LinearLayout>
 </android.support.v7.widget.CardView>
