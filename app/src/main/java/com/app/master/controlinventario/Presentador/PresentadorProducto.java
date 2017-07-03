@@ -15,11 +15,13 @@ public class PresentadorProducto implements iPresentadorProducto {
     private iProductoAgregar iProductoAgregar;
     private Context context;
     private ArrayList<Producto>productos;
+    private ArrayList<String> cadenas;
 
-    public PresentadorProducto(Context context,iProductoAgregar iProductoAgregar,ArrayList<Producto>productos){
+    public PresentadorProducto(Context context,iProductoAgregar iProductoAgregar,ArrayList<Producto>productos,ArrayList<String>cadenas){
         this.context=context;
         this.iProductoAgregar=iProductoAgregar;
         this.productos=productos;
+        this.cadenas=cadenas;
     }
 
 
@@ -30,7 +32,7 @@ public class PresentadorProducto implements iPresentadorProducto {
 
     @Override
     public void establecerRecycler() {
-        iProductoAgregar.setAdaptador(iProductoAgregar.getAdaptador(productos,context));
+        iProductoAgregar.setAdaptador(iProductoAgregar.getAdaptador(productos,context,cadenas));
     }
 
 }

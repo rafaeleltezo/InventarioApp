@@ -1,14 +1,17 @@
 package com.app.master.controlinventario.Vista;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.app.master.controlinventario.MainActivity;
 import com.app.master.controlinventario.Modelo.Producto;
 import com.app.master.controlinventario.Presentador.PresentadorProducto;
 import com.app.master.controlinventario.Presentador.iPresentadorProducto;
@@ -23,6 +26,7 @@ public class ProductoAgregar extends AppCompatActivity implements iProductoAgreg
     private iPresentadorProducto presentador;
     private RecyclerView recyclerView;
     private ArrayList<Producto> productos;
+    private ArrayList<String> cadenas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +36,7 @@ public class ProductoAgregar extends AppCompatActivity implements iProductoAgreg
         productos=new ArrayList();
         Bundle bundle=getIntent().getExtras();
         //ArrayList<Producto>cadena=(ArrayList<Producto>) bundle.get("cadena");
-        ArrayList<String> cadenas=(ArrayList<String>) bundle.get("cadena");
+        cadenas=(ArrayList<String>) bundle.get("cadena");
         for (String cadena:cadenas) {
 
         String[]valores=cadena.split(":");
@@ -49,7 +53,7 @@ public class ProductoAgregar extends AppCompatActivity implements iProductoAgreg
         productos.add(new Producto(codigo,nombre, fecha, fechaVencimiento,costoCompra, valorSugerido, descuento, iva, imagen));
         }
 
-        presentador=new PresentadorProducto(this,this,productos);
+        presentador=new PresentadorProducto(this,this,productos,cadenas);
         /*productos=new ArrayList();
         for (Producto c:cadena) {
 
@@ -71,8 +75,8 @@ public class ProductoAgregar extends AppCompatActivity implements iProductoAgreg
     }
 
     @Override
-    public AdaptadorRecyclerProducto getAdaptador(ArrayList<Producto>pro, Context context) {
-        AdaptadorRecyclerProducto adaptador=new AdaptadorRecyclerProducto(pro,context);
+    public AdaptadorRecyclerProducto getAdaptador(ArrayList<Producto>pro, Context context,ArrayList<String>cadenas) {
+        AdaptadorRecyclerProducto adaptador=new AdaptadorRecyclerProducto(pro,context,cadenas);
         return adaptador;
     }
 
@@ -81,4 +85,11 @@ public class ProductoAgregar extends AppCompatActivity implements iProductoAgreg
         recyclerView.setAdapter(adaptador);
     }
 
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        Intent intentos=new Intent(this, MainActivity.class);
+        startActivity(intentos);
+        finish();
+        return super.onKeyUp(keyCode, event);
+    }
 }

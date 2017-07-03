@@ -19,6 +19,6 @@ public interface iProductoAgregar {
 
     public LinearLayoutManager getLinear();
     public void setLinear(LinearLayoutManager linear);
-    public AdaptadorRecyclerProducto getAdaptador(ArrayList<Producto> pro, Context context);
+    public AdaptadorRecyclerProducto getAdaptador(ArrayList<Producto> pro, Context context,ArrayList<String>cadena);
     public void setAdaptador(AdaptadorRecyclerProducto adaptador);
 }

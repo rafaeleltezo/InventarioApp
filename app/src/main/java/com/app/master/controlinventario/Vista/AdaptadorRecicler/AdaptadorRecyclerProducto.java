@@ -30,11 +30,17 @@ import java.util.ArrayList;
 public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRecyclerProducto.viewHolder> {
 
     private ArrayList<Producto> productos;
+    private ArrayList<String>cadena;
     private Context context;
     private View view;
     public AdaptadorRecyclerProducto(ArrayList<Producto> productos, Context context){
         this.productos=productos;
         this.context=context;
+    }
+    public AdaptadorRecyclerProducto(ArrayList<Producto> productos, Context context,ArrayList<String> cadena){
+        this.productos=productos;
+        this.context=context;
+        this.cadena=cadena;
     }
 
     @Override
@@ -46,7 +52,6 @@ public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRec
     @Override
     public void onBindViewHolder(final viewHolder holder, int position) {
         final Producto producto=productos.get(position);
-
         holder.codigo.setText(producto.getCodigo());
         holder.nombre.setText(producto.getNombre());
         holder.precio.setText(String.valueOf(producto.getCostoCompra()));
@@ -56,6 +61,7 @@ public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRec
 
             public void onClick(View v) {
                 Intent intent=new Intent(context, DetallesProducto.class);
+                intent.putStringArrayListExtra("array_posicion",cadena);
                 intent.putExtra("codigo",producto.getCodigo());
                 intent.putExtra("nombre",producto.getNombre());
                 intent.putExtra("fecha",producto.getFecha());
