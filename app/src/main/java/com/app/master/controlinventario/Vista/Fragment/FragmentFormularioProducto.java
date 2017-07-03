@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.app.master.controlinventario.R;
 
@@ -16,8 +15,6 @@ import com.app.master.controlinventario.R;
 
 public class FragmentFormularioProducto extends Fragment {
 
-    private TextView  codigo,  nombre,  fecha,  fechaVencimiento,  costoCompra,
-            valorSugerido,  descuento,  iva, imagen;
 
 
     @Nullable

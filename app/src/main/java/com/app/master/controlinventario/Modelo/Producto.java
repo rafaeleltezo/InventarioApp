@@ -5,8 +5,8 @@ package com.app.master.controlinventario.Modelo;
  */
 
 public class Producto {
-    String codigo,nombre,fecha,fechaVencimiento,imagen;
-    double costoCompra,valorSugerido,descuento,iva;
+    private String codigo,nombre,fecha,fechaVencimiento,imagen;
+    private double costoCompra,valorSugerido,descuento,iva;
 
     public Producto(String codigo, String nombre, String fecha, String fechaVencimiento, double costoCompra, double valorSugerido, double descuento, double iva,String imagen) {
         this.codigo = codigo;

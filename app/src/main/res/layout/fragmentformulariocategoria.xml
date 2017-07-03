@@ -21,7 +21,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Este modulo te permite crear los productos que manejas en tu negocio."
+                android:text="Este modulo te permite crear las categoria de los productos que manejas en tu negocio."
                 android:layout_alignParentTop="true"
                 android:textSize="15sp"
                 android:textColor="#000"
