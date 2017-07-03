@@ -62,8 +62,17 @@
                     android:layout_below="@+id/NombreCartaProducto"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_marginTop="33dp" />
+                    android:layout_marginTop="33dp"
+                    android:layout_alignRight="@+id/codigoProductoCarta"
+                    android:layout_alignEnd="@+id/codigoProductoCarta" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imagenCodigoQrCartaProducto"
+                    android:layout_below="@+id/PrecioCartaProducto"
+                    android:layout_margin="@dimen/activity_vertical_margin"/>
             </RelativeLayout>
+
         </LinearLayout>
 
 

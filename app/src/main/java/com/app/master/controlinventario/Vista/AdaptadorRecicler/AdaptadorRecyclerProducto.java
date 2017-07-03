@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.master.controlinventario.Modelo.Producto;
+import com.app.master.controlinventario.Modelo.ResFull.ConstantesGeneradorCodigoQr;
 import com.app.master.controlinventario.R;
 import com.app.master.controlinventario.Vista.DetallesProducto;
 import com.app.master.controlinventario.Vista.ProductoAgregar;
@@ -56,6 +57,9 @@ public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRec
         holder.nombre.setText(producto.getNombre());
         holder.precio.setText(String.valueOf(producto.getCostoCompra()));
         Picasso.with(context).load(producto.getImagen()).into(holder.foto);
+        Picasso.with(context).load(ConstantesGeneradorCodigoQr.URL+producto.getCodigo()+"%27"+producto.getNombre()+"%27"+producto.getFecha()+"%27"+producto.getFechaVencimiento()
+                +"%27"+producto.getCostoCompra()+"%27"+producto.getValorSugerido()+"%27"+producto.getDescuento()+"%27"+producto.getIva()+"%27"+producto.getImagen())
+                .into(holder.imagenCodigoQr);
         holder.foto.setOnClickListener(new View.OnClickListener() {
             @Override
 
@@ -74,7 +78,7 @@ public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRec
                 context.startActivity(intent);
             }
         });
-        Toast.makeText(context, context.getClassLoader().toString(), Toast.LENGTH_SHORT).show();
+
 
     }
 
@@ -85,7 +89,7 @@ public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRec
 
     public static class viewHolder extends RecyclerView.ViewHolder{
         private TextView nombre,codigo,precio;
-        private ImageView foto;
+        private ImageView foto,imagenCodigoQr;
 
         public viewHolder(View itemView) {
             super(itemView);
@@ -93,7 +97,7 @@ public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRec
             nombre=(TextView)                     itemView.findViewById(R.id.NombreCartaProducto);
             precio=(TextView)                     itemView.findViewById(R.id.PrecioCartaProducto);
             foto=(ImageView)                      itemView.findViewById(R.id.imagenCartaProducto);
-
+            imagenCodigoQr=(ImageView)            itemView.findViewById(R.id.imagenCodigoQrCartaProducto);
         }
 
     }
