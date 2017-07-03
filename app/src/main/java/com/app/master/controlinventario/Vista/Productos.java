@@ -1,12 +1,15 @@
 package com.app.master.controlinventario.Vista;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 
+import com.app.master.controlinventario.MainActivity;
 import com.app.master.controlinventario.R;
 import com.app.master.controlinventario.Vista.AdaptadorresViewPager.AdaptadorViewPager;
 import com.app.master.controlinventario.Vista.Fragment.FragmentFormularioProducto;
@@ -40,5 +43,12 @@ public class Productos extends AppCompatActivity implements iProductos {
         return fragments;
     }
 
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        Intent intentos=new Intent(this, MainActivity.class);
+        startActivity(intentos);
+        finish();
+        return super.onKeyUp(keyCode, event);
+    }
 
 }

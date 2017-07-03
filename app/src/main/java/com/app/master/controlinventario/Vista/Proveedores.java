@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.KeyEvent;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
@@ -60,4 +61,11 @@ public class Proveedores extends AppCompatActivity implements iProveedores {
     }
 
 
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        Intent intentos=new Intent(this, MainActivity.class);
+        startActivity(intentos);
+        finish();
+        return super.onKeyUp(keyCode, event);
+    }
 }

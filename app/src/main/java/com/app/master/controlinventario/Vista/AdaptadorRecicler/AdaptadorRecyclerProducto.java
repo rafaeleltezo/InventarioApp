@@ -74,6 +74,7 @@ public class AdaptadorRecyclerProducto extends RecyclerView.Adapter<AdaptadorRec
                 context.startActivity(intent);
             }
         });
+        Toast.makeText(context, context.getClassLoader().toString(), Toast.LENGTH_SHORT).show();
 
     }
 
