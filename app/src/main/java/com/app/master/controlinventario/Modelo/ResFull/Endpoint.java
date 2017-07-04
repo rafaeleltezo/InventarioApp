@@ -1,14 +1,7 @@
 package com.app.master.controlinventario.Modelo.ResFull;
 
-import java.util.ArrayList;
-
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -27,4 +20,9 @@ public interface Endpoint {
 
     @GET("http://sisra.rsisco.com/controlinventario/ListarProveedores.php")
     Call<RespuestaProveedores>obtenerListaprovedores();
+
+    @GET("http://sisra.rsisco.com/controlinventario/CrearCategoria.php")
+    Call<RespuestaEndpointIngresarProveedor> CrearCategoria(
+            @Query("codigo") String codigo, @Query("nombre")String nombre);
+
 }

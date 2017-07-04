@@ -26,7 +26,8 @@
         <activity android:name=".Vista.Productos" />
         <activity android:name=".Vista.Scanner" />
         <activity android:name=".Vista.ProductoAgregar" />
-        <activity android:name=".Vista.DetallesProducto"></activity>
+        <activity android:name=".Vista.DetallesProducto" />
+        <activity android:name=".Vista.Categorias"></activity>
     </application>
 
 </manifest>

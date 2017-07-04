@@ -80,7 +80,7 @@
                     <Button
                         android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
-                        android:id="@+id/enviarProductoformulario"
+                        android:id="@+id/enviarCategoriaformulario"
                         android:text="Guardar"
                         android:textStyle="bold"
                         android:background="#C51162"

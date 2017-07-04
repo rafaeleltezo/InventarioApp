@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.app.master.controlinventario.Vista.Categorias;
 import com.app.master.controlinventario.Vista.Productos;
 import com.app.master.controlinventario.Vista.Proveedores;
 import com.app.master.controlinventario.Vista.Scanner;
@@ -123,10 +124,9 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intento);
                 break;
             case R.id.Categoria:
-                //fragment = new FragmentFormularioCategoria();
-                //FragmentTransaction = true;
-
+                intento=new Intent(MainActivity.this,Categorias.class);
                 startActivity(intento);
+
                 break;
             case R.id.Producto:
                 //fragment = new FragmentFormularioProducto();

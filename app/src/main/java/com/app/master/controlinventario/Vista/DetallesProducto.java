@@ -26,7 +26,6 @@ public class DetallesProducto extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles_producto);
-
         codigo=(TextView)findViewById(R.id.editarCodigoProducto);
         nombre=(TextView)findViewById(R.id.editarNombreProducto);
         fecha=(TextView)findViewById(R.id.editarFechaProducto);
@@ -60,6 +59,7 @@ public class DetallesProducto extends AppCompatActivity implements View.OnClickL
         Picasso.with(this).load(imagen).into(this.imagen);
         eliminar.setOnClickListener(this);
 
+        Toast.makeText(this, getClassLoader().getClass().toString(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
