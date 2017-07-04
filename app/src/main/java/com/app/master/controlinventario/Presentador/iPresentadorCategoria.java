@@ -7,5 +7,8 @@ package com.app.master.controlinventario.Presentador;
 public interface iPresentadorCategoria {
 
     public void IngresarCategoria(String codigo,String nombre);
-    public void estadoDeingresoProveedor();
+    public void estadoDeingresoCategoria();
+    public void ListarCategorias();
+    public void establecerLayout();
+    public void establecerRecycler();
 }

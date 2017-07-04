@@ -25,4 +25,7 @@ public interface Endpoint {
     Call<RespuestaEndpointIngresarProveedor> CrearCategoria(
             @Query("codigo") String codigo, @Query("nombre")String nombre);
 
+    @GET("http://sisra.rsisco.com/controlinventario/ListarCategoria.php")
+    Call<RespuestaEndpoindIngresarCategoria>obtenerListaCategoria();
+
 }

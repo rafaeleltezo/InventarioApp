@@ -3,6 +3,7 @@ package com.app.master.controlinventario.Modelo.ResFull;
 import com.app.master.controlinventario.Modelo.ResFull.Deserializador.DeserializadorDatosJson;
 import com.app.master.controlinventario.Modelo.ResFull.Deserializador.DeserializadorIngresarCategoria;
 import com.app.master.controlinventario.Modelo.ResFull.Deserializador.DeserializadorIngresarProveedor;
+import com.app.master.controlinventario.Modelo.ResFull.Deserializador.DeserializadorListarCategorias;
 import com.app.master.controlinventario.Modelo.ResFull.Deserializador.DeserializadorListarProveedor;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -59,6 +60,12 @@ public class RestApiAdapter {
     public Gson construirGsonDeserializadorIngresarCategoria(){
         GsonBuilder gsonBuilder=new GsonBuilder();
         gsonBuilder.registerTypeAdapter(RespuestaEndpointIngresarProveedor.class,new DeserializadorIngresarCategoria());
+        return gsonBuilder.create();
+    }
+
+    public Gson construirGsonDeserializadorListarCategoria(){
+        GsonBuilder gsonBuilder=new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(RespuestaEndpoindIngresarCategoria.class,new DeserializadorListarCategorias());
         return gsonBuilder.create();
     }
 }
