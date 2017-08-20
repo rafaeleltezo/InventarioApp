@@ -2,6 +2,7 @@ package com.app.master.controlinventario.Vista.Fragment;
 
 import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 
 import com.app.master.controlinventario.Modelo.Proveedor;
 import com.app.master.controlinventario.Vista.AdaptadorRecicler.AdaptadorRecyclerProveedor;
@@ -14,8 +15,8 @@ import java.util.ArrayList;
 
 public interface iFragmentRecyclerProveedores {
 
-    public GridLayoutManager crearLayaout();
-    public void establecerLayout(GridLayoutManager gridLayoutManager);
+    public LinearLayoutManager crearLayaout();
+    public void establecerLayout(LinearLayoutManager linearLayoutManager);
     public AdaptadorRecyclerProveedor crearAdaptador(ArrayList<Proveedor> proveedores, Context context);
     public void establecerAdaptador(AdaptadorRecyclerProveedor adaptadorRecyclerProveedor);
 }

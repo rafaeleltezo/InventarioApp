@@ -101,8 +101,13 @@ public class PresentadorProveedor implements iPresentadorProveedor {
             @Override
             public void onResponse(Call<RespuestaProveedores> call, Response<RespuestaProveedores> response) {
                RespuestaProveedores respuestaProveedores=response.body();
-                arrayproveedores=respuestaProveedores.getProveedores();
-                establecerRecycleView();
+                try {
+                    arrayproveedores = respuestaProveedores.getProveedores();
+
+                    establecerRecycleView();
+                }catch (NullPointerException e){
+                    Toast.makeText(context, "no hay ningun proveedor disponible", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override

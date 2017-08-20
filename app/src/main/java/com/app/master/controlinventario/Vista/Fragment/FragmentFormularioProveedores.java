@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.master.controlinventario.Presentador.PresentadorProveedor;
 import com.app.master.controlinventario.Presentador.iPresentadorProveedor;
@@ -57,4 +58,8 @@ public class FragmentFormularioProveedores extends Fragment implements iFragment
         });
         return v;
     }
+
+
+
+
 }

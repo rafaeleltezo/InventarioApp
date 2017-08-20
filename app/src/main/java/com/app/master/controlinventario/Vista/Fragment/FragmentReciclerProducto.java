@@ -33,11 +33,11 @@ public class FragmentReciclerProducto extends Fragment {
 
     private ArrayList<Producto> productos(){
         ArrayList<Producto>productos=new ArrayList();
-        productos.add(new Producto("011","soflan","","",2,2,2,2,"https://cdn.shopify.com/s/files/1/0191/9978/products/PLATOS-3_grande.jpg"));
-        productos.add(new Producto("012","soflan","","",2,2,2,2,"https://cdn.shopify.com/s/files/1/0191/9978/products/PLATOS-3_grande.jpg"));
-        productos.add(new Producto("013","soflan","","",2,2,2,2,"https://cdn.shopify.com/s/files/1/0191/9978/products/PLATOS-3_grande.jpg"));
-        productos.add(new Producto("014","soflan","","",2,2,2,2,"https://cdn.shopify.com/s/files/1/0191/9978/products/PLATOS-3_grande.jpg"));
-        productos.add(new Producto("015","soflan","","",2,2,2,2,"https://cdn.shopify.com/s/files/1/0191/9978/products/PLATOS-3_grande.jpg"));
+        productos.add(new Producto("011","soflan","","",2,2,2,2,"https://images-na.ssl-images-amazon.com/images/I/5156FefjlqL._SY355_.jpg"));
+        productos.add(new Producto("012","soflan","","",2,2,2,2,"https://static.iris.net.co/semana/upload/images/2016/7/11/481531_1.jpg"));
+        productos.add(new Producto("013","soflan","","",2,2,2,2,"http://static.hsbnoticias.com/sites/default/files/styles/original/public/gallery/2015/12/chocorramo.png?itok=VUxLzUTF"));
+        productos.add(new Producto("014","soflan","","",2,2,2,2,"https://images-na.ssl-images-amazon.com/images/I/5156FefjlqL._SY355_.jpg"));
+        productos.add(new Producto("015","soflan","","",2,2,2,2,"http://static.hsbnoticias.com/sites/default/files/styles/original/public/gallery/2015/12/chocorramo.png?itok=VUxLzUTF"));
         return productos;
     }
 

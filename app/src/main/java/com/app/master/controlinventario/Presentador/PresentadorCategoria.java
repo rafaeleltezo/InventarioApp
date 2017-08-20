@@ -92,13 +92,18 @@ public class PresentadorCategoria implements iPresentadorCategoria{
             @Override
             public void onResponse(Call<RespuestaEndpoindIngresarCategoria> call, Response<RespuestaEndpoindIngresarCategoria> response) {
                 RespuestaEndpoindIngresarCategoria respuesta=response.body();
-                categorias=respuesta.getCategorias();
-                establecerRecycler();
+               try {
+                   categorias=respuesta.getCategorias();
+                   establecerRecycler();
+               }catch (NullPointerException e){
+                   //Toast.makeText(context, "no se encontro ninguna categoria", Toast.LENGTH_SHORT).show();
+               }
+
             }
 
             @Override
             public void onFailure(Call<RespuestaEndpoindIngresarCategoria> call, Throwable t) {
-                Toast.makeText(context, "Error, Intentelo mas tarde", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(context, "Error, Intentelo mas tarde", Toast.LENGTH_SHORT).show();
             }
         });
     }

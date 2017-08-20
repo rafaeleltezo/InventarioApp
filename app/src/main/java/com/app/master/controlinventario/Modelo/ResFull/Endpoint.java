@@ -13,19 +13,19 @@ public interface Endpoint {
     @GET("http://sisra.rsisco.com/practica/archivo.php")
     Call<RespuestaEndpoint> GenerarDatos();
 
-    @GET("http://sisra.rsisco.com/controlinventario/CrearProveedores.php")
+    @GET("http://sisra.rsisco.com/appmovil/CrearProveedores.php")
     Call<RespuestaEndpointIngresarProveedor> CrearProveedores(
             @Query("nit") String nit, @Query("nombre")String nombre,
             @Query("direccion")String direccion, @Query("telefono") String telefono);
 
-    @GET("http://sisra.rsisco.com/controlinventario/ListarProveedores.php")
+    @GET("http://sisra.rsisco.com/appmovil/ListarProveedores.php")
     Call<RespuestaProveedores>obtenerListaprovedores();
 
     @GET("http://sisra.rsisco.com/controlinventario/CrearCategoria.php")
     Call<RespuestaEndpointIngresarProveedor> CrearCategoria(
             @Query("codigo") String codigo, @Query("nombre")String nombre);
 
-    @GET("http://sisra.rsisco.com/controlinventario/ListarCategoria.php")
+    @GET("http://sisra.rsisco.com/appmovil/ListarCategoria.php")
     Call<RespuestaEndpoindIngresarCategoria>obtenerListaCategoria();
 
 }

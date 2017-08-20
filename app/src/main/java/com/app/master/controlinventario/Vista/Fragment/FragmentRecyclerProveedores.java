@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -41,13 +42,13 @@ public class FragmentRecyclerProveedores extends Fragment implements iFragmentRe
 
 
     @Override
-    public GridLayoutManager crearLayaout() {
-        GridLayoutManager grid=new GridLayoutManager(getContext(),2);
-        return grid;
+    public LinearLayoutManager crearLayaout() {
+        LinearLayoutManager linear=new LinearLayoutManager(getContext());
+        return linear;
     }
 
     @Override
-    public void establecerLayout(GridLayoutManager gridLayoutManager) {
+    public void establecerLayout(LinearLayoutManager gridLayoutManager) {
         recyclerView.setLayoutManager(gridLayoutManager);
     }
 

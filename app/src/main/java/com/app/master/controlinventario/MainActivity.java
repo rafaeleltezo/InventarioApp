@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,6 +19,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.app.master.controlinventario.Vista.Categorias;
+import com.app.master.controlinventario.Vista.Fragment.FragmentPrincipalCategoria;
+import com.app.master.controlinventario.Vista.Fragment.FragmentPrincipalProducto;
+import com.app.master.controlinventario.Vista.Fragment.FragmentPrincipalProveedores;
 import com.app.master.controlinventario.Vista.Productos;
 import com.app.master.controlinventario.Vista.Proveedores;
 import com.app.master.controlinventario.Vista.Scanner;
@@ -67,9 +71,9 @@ public class MainActivity extends AppCompatActivity
         if(bundle!=null){
             ArrayList<String>cadena;
             cadena=(ArrayList<String>) bundle.get("cadena");
-            for (String c:cadena) {
-                Toast.makeText(this, c, Toast.LENGTH_SHORT).show();
-            }
+//            for (String c:cadena) {
+           //     Toast.makeText(this, c, Toast.LENGTH_SHORT).show();
+  //          }
         }
     }
 
@@ -111,42 +115,44 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-       // boolean FragmentTransaction = false;
-        //Fragment fragment = null;
+        boolean FragmentTransaction = false;
+        Fragment fragment = null;
         Intent intento=null;
 
         switch (id)
         {
             case R.id.Proveedores:
-               // fragment = new FragmentFormularioProveedores();
-               // FragmentTransaction = true;
-                intento=new Intent(MainActivity.this,Proveedores.class);
-                startActivity(intento);
+                fragment = new FragmentPrincipalProveedores();
+                FragmentTransaction = true;
+                //intento=new Intent(MainActivity.this,Proveedores.class);
+                //startActivity(intento);
                 break;
             case R.id.Categoria:
-                intento=new Intent(MainActivity.this,Categorias.class);
-                startActivity(intento);
-
+                fragment = new FragmentPrincipalCategoria();
+                FragmentTransaction = true;
+                //intento=new Intent(MainActivity.this,Categorias.class);
+                //startActivity(intento);
                 break;
             case R.id.Producto:
-                //fragment = new FragmentFormularioProducto();
-                //FragmentTransaction = true;
-                intento=new Intent(MainActivity.this,Productos.class);
-                startActivity(intento);
+                fragment = new FragmentPrincipalProducto();
+                FragmentTransaction = true;
+                //intento=new Intent(MainActivity.this,Productos.class);
+                //startActivity(intento);
                 break;
 
 
         }
-    /*
+
         if(FragmentTransaction)
         {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.framento,fragment)
                     .commit();
-        }*/
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+        }
 
-        item.setChecked(true);
-        getSupportActionBar().setTitle(item.getTitle());
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
